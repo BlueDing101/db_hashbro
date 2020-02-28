@@ -1,0 +1,10 @@
+<view class="container">
+    <scroll-view class="store-list" scroll-y="true" scroll-top="{{scrollTop}}">
+        <view class="item" wx:for="{{storeList}}" wx:for-item="storeJson">
+          <view class="store-info" bindtap='choseStore' data-name='{{storeJson.store_name}}' data-id='{{storeJson.store_id}}'>
+            <view class="store-name">{{storeJson.store_name}}</view>
+          </view>
+          <!-- <text class="log-item">{{act.activity_name}}</text> -->
+        </view>
+    </scroll-view>
+</view>

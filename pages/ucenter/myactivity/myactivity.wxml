@@ -1,0 +1,19 @@
+<!--pages/ucenter/myactivity/myactivity.wxml-->
+<view class="container">
+    <scroll-view class="topic-list" scroll-y="true" scroll-top="{{scrollTop}}">
+        <view class="item-empty" wx:if="{{myactivity_list.length <= 0}}">暂无报名的活动</view>
+        <view class="item" wx:if="{{myactivity_list.length > 0}}" wx:for="{{myactivity_list}}" wx:for-item="myact">
+          <!-- <view class="myactivity-info" data-name='{{myact.store_name}}' data-id='{{myact.store_id}}'> -->
+            <view class="info">
+                <text class="title">活动名称：{{myact.activity_name}}\n</text>
+                <text class="desc">门店：{{myact.store_name}}\n开始时间：{{myact.activity_start_datetime}} \n结束时间：{{myact.activity_end_datetime}}\n</text>
+                <text class="delettext" data-name='{{myact.activity_name}}' data-id='{{myact.id}}' bindtap="deleteMyActivity">点击取消报名</text>
+                <text>\n</text>
+                <!-- <text class="price">{{item.price_info}}元起</text> -->
+            </view>
+          <!-- </view> -->
+          <!-- <text class="log-item">{{act.activity_name}}</text> -->
+        </view>
+    </scroll-view>
+</view>
+<van-dialog id="van-dialog" />

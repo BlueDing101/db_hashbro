@@ -1,0 +1,7 @@
+/* pages/activitySignup/activitySignup.wxss */
+.signupBottom {
+  width: 100%;
+  height: 40rpx;
+  margin-left: 20rpx;
+  margin-right: 20rpx;
+}

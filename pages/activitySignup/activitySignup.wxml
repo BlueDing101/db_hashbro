@@ -1,0 +1,43 @@
+<!--pages/campaign_signup/campaign_signup.wxml-->
+<text>报名信息填写\n</text>
+<text>活动名称:</text>
+<text>{{activity_name}}\n</text>
+<!-- <text>选择门店</text> -->
+<view bindtap="clickToChooseStore">
+  <view wx:if="{{storeChoseFlag == false}}">
+    <text>{{storeChoseName}}</text>
+  </view>
+  <view wx:else>
+    <text>
+      {{storeChoseName}}
+    </text>
+  </view>
+</view>
+<view>
+<van-cell-group>
+  <van-field
+    value="{{ usrname }}"
+    placeholder="请输入姓名"
+    required
+    border="{{ false }}"
+    bind:change="onChangeUname"
+  />
+</van-cell-group>
+</view>
+<view>
+<van-cell-group>
+  <van-field
+    value="{{ cellphoneNum }}"
+    placeholder="请输入手机号"
+    required
+    border="{{ false }}"
+    bind:change="onChangePhoneNum"
+  />
+</van-cell-group>
+</view>
+<!-- <input class="weui-input" auto-focus placeholder="请输入活动名称"/> -->
+<van-button class="signupBottom" wx:if="{{storeChoseFlag==false || userName=='' || cellphoneNum == ''}}" disabled type="default">点击报名</van-button>
+
+<van-button class="signupBottom" wx:else type="default" bindtap="clickToSignUp">点击报名</van-button>
+<!-- <view bindtap="clickToSignUp">点击报名</view> -->
+<van-dialog id="van-dialog" />

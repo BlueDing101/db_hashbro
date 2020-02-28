@@ -1,0 +1,17 @@
+<view class="container">
+    <scroll-view class="topic-list" scroll-y="true" scroll-top="{{scrollTop}}">
+        <navigator class="item" wx:for="{{activity_list}}" wx:key="{{item.id}}" url="../activitySignup/activitySignup?id={{item.id}}">
+            <!-- <image class="img" src="{{item.scene_pic_url}}"></image> -->
+            <view class="info">
+                <text class="title">{{item.activity_name}}</text>
+                <text class="desc">开始时间：{{item.activity_start_datetime}} \n结束时间：{{item.activity_end_datetime}}</text>
+                <text class="signuptext">点击进入报名页面</text>
+                <!-- <text class="price">{{item.price_info}}元起</text> -->
+            </view>
+        </navigator>
+        <!-- <view class="page" wx:if="{{showPage}}">
+            <view class="prev {{ page <= 1 ? 'disabled' : ''}}" bindtap="prevPage">上一页</view>
+            <view class="next {{ (count / size) < page +1 ? 'disabled' : ''}}" bindtap="nextPage">下一页</view>
+        </view> -->
+    </scroll-view>
+</view>
